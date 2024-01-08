@@ -33,7 +33,7 @@ CREATE TABLE `cert_exam_score`
     `cert_exam_date`    DATE NOT NULL COMMENT '시험일자',
     `cert_exam_score`    SMALLINT NOT NULL COMMENT '공인영어점수',
     `cert_exam_expire_status`    CHAR(1) NOT NULL COMMENT '만료여부',
-    `stud_id`    MEDIUMINT COMMENT '학생번호',
+    `stud_id`    MEDIUMINT NOT NULL COMMENT '학생번호',
  PRIMARY KEY ( `cert_exam_id` )
 )
  COMMENT = '공인영어성적';
@@ -134,7 +134,6 @@ CREATE TABLE `level`
 (
     `level_id`    SMALLINT NOT NULL COMMENT '레벨코드',
     `level_reference_score`    SMALLINT NOT NULL COMMENT '레벨기준점수',
-    `refund_reference_score`    SMALLINT NOT NULL COMMENT '환급기준점수',
  PRIMARY KEY ( `level_id` )
 )
  COMMENT = '레벨';
@@ -186,7 +185,7 @@ CREATE TABLE `placement_exam`
     `placement_exam_id`    SMALLINT NOT NULL COMMENT '배치고사수험번호',
     `exam_type`    VARCHAR(255) NOT NULL COMMENT '시험종류',
     `placement_exam_score`    SMALLINT NOT NULL COMMENT '배치고사점수',
-    `stud_id`    MEDIUMINT COMMENT '학생번호',
+    `stud_id`    MEDIUMINT NOT NULL COMMENT '학생번호',
  PRIMARY KEY ( `placement_exam_id` )
 )
  COMMENT = '배치고사';
@@ -228,7 +227,6 @@ CREATE TABLE `student`
     `stud_resign_date`    DATE COMMENT '학생퇴원일',
     `stud_status`    CHAR(1) NOT NULL COMMENT '학생재원여부',
     `stud_email`    VARCHAR(255) NOT NULL COMMENT '학생이메일',
-    `stud_account`    VARCHAR(255) NOT NULL COMMENT '학생계좌번호',
     `level_id`    SMALLINT COMMENT '레벨코드',
  PRIMARY KEY ( `stud_id` )
 )
