@@ -72,11 +72,7 @@
     
     ![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled%202.png)
     
-- **논리모델링(IE 표기법)**
-    
-    ![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled%203.png)
-    
-    [Koongya Academy](https://www.erdcloud.com/d/KrziAjsk86HevjrzT)
+
     
 
 - **논리모델링(Barker 표기법)**
