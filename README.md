@@ -1,50 +1,49 @@
-# README
 
 # ✏️ **Koongya Academy**
-1. [프로젝트 기획](#📄-1-프로젝트-기획)
+<a href="#1">📄 1. 프로젝트 기획</a>
 
-    1-1. [개요](#1-1-개요)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-1">1-1. 개요</a>
 
-    1-2. [설계목적 및 효과](#1-2-설계목적-및-효과)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-2">1-2. 설계목적 및 효과</a>
 
-    1-3. [WBS(Work Breakdown Structure)](#1-3-wbswork-breakdown-structure)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-3">1-3. WBS(Work Breakdown Structure)</a>
 
-    1-4. [요구사항 명세서](#1-4-요구사항-명세서)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-4">1-4. 요구사항 명세서</a>
 
-2. [개념&논리 모델링](#📌-2-개념논리-모델링)
+<a href="#2">📌 2. 개념&논리 모델링</a>
 
-3. [물리 모델링](#🔍-3-물리-모델링)
+<a href="#3">🔍 3. 물리 모델링</a>
 
-4. [Replication Server 구축 현황](#⚙️-4-replication-server-구축-현황)
+<a href="#4">⚙️ 4. Replication Server 구축 현황</a>
 
-5. [테스트케이스 정의서](#🔖-5-테스트케이스-정의서)
+<a href="#5">🔖 5. 테스트케이스 정의서</a>
 
-    5-1. [CRUD Case](#5-1-crud-case)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#5-1">5-1. CRUD Case</a>
 
-    5-2. [JOIN Case](#5-2-join-case)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#5-2">5-2. JOIN Case</a>
 
-    5-3. [Transaction Case](#5-3-transaction-case)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#5-3">5-3. Transaction Case</a>
 
-6. [회고록](#📗-6-회고록)
+<a href="#6">📗 6. 회고록</a>
 
-    6-1. [회의록](#6-1-회의록)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#6-1">6-1. 회의록</a>
 
-    6-2. [개선 여지](#6-2-개선-여지)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#6-2">6-2. 개선 여지</a>
 
-    6-3. [개인적 감상](#6-3-개인적-감상)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#6-3">6-3. 개인적 감상</a>
 
 
 ---
 👥 소우주, 손세림, 신대영, 양지혜, 조예린, 지현근
 ---
 
-## 📄 1. 프로젝트 기획
+## <p id="1">📄 1. 프로젝트 기획</p>
 
-### 1-1. 개요
+### <p id="1-1">1-1. 개요</p>
 
   글로벌 업무 역량 강화를 위해 공인어학성적 취득을 바라는 인원이 증가함에 따라 그에 맞는 학원 시스템 고도화의 필요성 또한 대두되고 있다. 기존의 어학학원 시스템에서 조금 더 효율적으로 발전시키고자 한다.
 
-### 1-2. 설계목적 및 효과
+### <p id="1-2">1-2. 설계목적 및 효과</p>
 
   이 시스템의 설계 목적은 공인어학학원의 체계적이고 효율적인 운영 및 관리를 위해 종합적인 솔루션을 제공하는 것이다. 이를 통해 학원은 학생들과의 원활한 소통, 학습 성과의 효과적인 모니터링, 그리고 관리 업무의 효율성을 극대화할 수 있다. 수강생의 개인 정보 및 수강 이력을 중앙에서 효과적으로 관리하여 학사 업무를 간편화해 관리자가 신속하게 조회 및 업데이트 할 수 있다.
 
@@ -54,19 +53,19 @@
 
   이러한 설계 목적 및 효과를 통해 학원은 고객인 학생들에게 높은 만족도를 제공하며, 학사 업무 및 관리 업무의 효율성을 높여 전반적인 운영을 최적화할 수 있을 것으로 기대된다.
 
-### 1-3. WBS(Work Breakdown Structure)
+### <p id="1-3">1-3. WBS(Work Breakdown Structure)</p>
 
 [WBS(Work Breakdown Structure)](https://docs.google.com/spreadsheets/d/125BpUohO1kYKRrj6PqLOdRJN6mHNbAyU/edit#gid=1057334268)
 
 ![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled.png)
 
-### 1-4. 요구사항 명세서
+### <p id="1-4">1-4. 요구사항 명세서</p>
 
 [요구사항명세서](https://docs.google.com/spreadsheets/d/1osO60pgOUC9nGXAfSiQJHdxwqVV4rpn3SHh1lWrW7-s/edit#gid=0)
 
 ![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled%201.png)
 
-## 📌 2. 개념&논리 모델링
+## <p id="2">📌 2. 개념&논리 모델링</p>
 
 - **개념모델링**
     
@@ -83,7 +82,7 @@
     
 
 
-## 🔍 3. 물리 모델링
+## <p id="3">🔍 3. 물리 모델링</p>
 
 ![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled%205.png)
 
@@ -745,7 +744,7 @@
 </details>
     
 
-## ⚙️ 4. Replication Server 구축 현황
+## <p id="4">⚙️ 4. Replication Server 구축 현황</p>
 
 ### Ubuntu 20.04 / MariaDB 15.1
 
@@ -768,14 +767,14 @@
 
 ![notio_replication.gif](README%2090456e44faab4013bf4520930090a7ab/notio_replication.gif)
 
-## 🔖 5. 테스트케이스 정의서
+## <p id="5">🔖 5. 테스트케이스 정의서</p>
 
 [테스트케이스 정의서](https://docs.google.com/spreadsheets/d/1qcAa6c_0MqGflC10ehZl9Xgtp1THU9ZJ3mJ6bYfTiaI/edit#gid=0)
 
 ![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled%209.png)
-
+<p id="5-1"></p>
 <details>
-<summary> 5-1. CRUD Case</summary>
+<summary>5-1. CRUD Case</summary>
 <div markdown="1">
 
 <details>
@@ -1022,7 +1021,7 @@ UPDATE book
 
 </div>
 </details>
-
+<p id="5-2"></p>
  <details>
 <summary> 5-2. JOIN Case</summary>
 <div markdown="1">        
@@ -1366,7 +1365,7 @@ SELECT
 
 </div>
 </details>
-    
+<p id="5-3"></p>   
 <details>
 <summary>5-3. Transaction Case</summary>
 <div markdown="1">
@@ -1391,9 +1390,9 @@ SELECT
 </div>
 </details>  
 
-## 📗 6. 회고록
+## <p id="6">📗 6. 회고록</p>
 
-### 6-1. 회의록
+### <p id="6-1">6-1. 회의록</p>
 
 <details>
 <summary>240101 회의록</summary>
@@ -1697,7 +1696,7 @@ SELECT
 </div>
 </details>     
 
-### 6-2. 개선 여지
+### <p id="6-2">6-2. 개선 여지</p>
 
 ### 서브 타입의 물리모델 결정기준
 - Rollup, Rolldown, Identity
@@ -1722,7 +1721,7 @@ SELECT
     3) 데이터의 증가에 따라 RollUp 방식이 아닌 Identity 방식으로 테이블을 유지함으로써 데이터의 확장성을 향상시킨다.
     
 
-### 6-3. 개인적 감상
+### <p id="6-3">6-3. 개인적 감상</p>
 
 | 조원명| 회고록 |
 | --- | --- |
