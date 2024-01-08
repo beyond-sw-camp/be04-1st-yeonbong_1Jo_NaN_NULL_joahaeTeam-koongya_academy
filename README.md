@@ -126,7 +126,7 @@
         `cert_exam_date`    DATE NOT NULL COMMENT '시험일자',
         `cert_exam_score`    SMALLINT NOT NULL COMMENT '공인영어점수',
         `cert_exam_expire_status`    CHAR(1) NOT NULL COMMENT '만료여부',
-        `stud_id`    MEDIUMINT COMMENT '학생번호',
+        `stud_id`    MEDIUMINT NOT NULL COMMENT '학생번호',
      PRIMARY KEY ( `cert_exam_id` )
     )
      COMMENT = '공인영어성적';
@@ -218,7 +218,6 @@
     (
         `level_id`    SMALLINT NOT NULL COMMENT '레벨코드',
         `level_reference_score`    SMALLINT NOT NULL COMMENT '레벨기준점수',
-        `refund_reference_score`    SMALLINT NOT NULL COMMENT '환급기준점수',
      PRIMARY KEY ( `level_id` )
     )
      COMMENT = '레벨';
@@ -267,7 +266,7 @@
         `placement_exam_id`    SMALLINT NOT NULL COMMENT '배치고사수험번호',
         `exam_type`    VARCHAR(255) NOT NULL COMMENT '시험종류',
         `placement_exam_score`    SMALLINT NOT NULL COMMENT '배치고사점수',
-        `stud_id`    MEDIUMINT COMMENT '학생번호',
+        `stud_id`    MEDIUMINT NOT NULL COMMENT '학생번호',
      PRIMARY KEY ( `placement_exam_id` )
     )
      COMMENT = '배치고사';
@@ -307,7 +306,6 @@
         `stud_resign_date`    DATE COMMENT '학생퇴원일',
         `stud_status`    CHAR(1) NOT NULL COMMENT '학생재원여부',
         `stud_email`    VARCHAR(255) NOT NULL COMMENT '학생이메일',
-        `stud_account`    VARCHAR(255) NOT NULL COMMENT '학생계좌번호',
         `level_id`    SMALLINT COMMENT '레벨코드',
      PRIMARY KEY ( `stud_id` )
     )
@@ -404,23 +402,23 @@
 <div markdown="1">   
     
 ```sql
-    INSERT INTO `level` (`level_id`, `level_reference_score`, `refund_reference_score`)
+    INSERT INTO `level` (`level_id`, `level_reference_score`)
     VALUES
-    (1, 100, 50),
-    (2, 200, 100),
-    (3, 300, 150),
-    (4, 400, 200),
-    (5, 500, 250),
-    (6, 600, 300),
-    (7, 700, 350),
-    (8, 800, 400),
-    (9, 900, 450),
-    (10, 1000, 500),
-    (11, 1100, 550),
-    (12, 1200, 600),
-    (13, 1300, 650),
-    (14, 1400, 700),
-    (15, 1500, 750);
+    (1, 100),
+    (2, 200),
+    (3, 300),
+    (4, 400),
+    (5, 500),
+    (6, 600),
+    (7, 700),
+    (8, 800),
+    (9, 900),
+    (10, 1000),
+    (11, 1100),
+    (12, 1200),
+    (13, 1300),
+    (14, 1400),
+    (15, 1500);
     
     INSERT INTO `job` (`job_id`, `job_name`)
     VALUES
@@ -440,23 +438,23 @@
     (14, 'Trainer'),
     (15, 'Support Staff');
     
-    INSERT INTO `student` (`stud_id`, `stud_name`, `stud_birth`, `stud_phone`, `stud_address`, `stud_pic`, `stud_enroll_date`, `stud_resign_date`, `stud_status`, `stud_email`, `stud_account`, `level_id`)
+    INSERT INTO `student` (`stud_id`, `stud_name`, `stud_birth`, `stud_phone`, `stud_address`, `stud_pic`, `stud_enroll_date`, `stud_resign_date`, `stud_status`, `stud_email`, `level_id`)
     VALUES
-    (1, 'Student1', '2000-01-01', '12345678901', 'Address1', NULL, '2022-01-01', NULL, 'Y', 'student1@example.com', 'Account1', 13),
-    (2, 'Student2', '2000-02-02', '12345678902', 'Address2', NULL, '2022-02-01', NULL, 'Y', 'student2@example.com', 'Account2', 7),
-    (3, 'Student3', '2000-03-03', '12345678903', 'Address3', NULL, '2022-03-01', NULL, 'Y', 'student3@example.com', 'Account3', 8),
-    (4, 'Student4', '2000-04-04', '12345678904', 'Address4', NULL, '2022-04-01', NULL, 'Y', 'student4@example.com', 'Account4', 7),
-    (5, 'Student5', '2000-05-05', '12345678905', 'Address5', NULL, '2022-05-01', NULL, 'N', 'student5@example.com', 'Account5', 13),
-    (6, 'Student6', '2000-06-06', '12345678906', 'Address6', NULL, '2022-06-01', NULL, 'N', 'student6@example.com', 'Account6', 1),
-    (7, 'Student7', '2000-07-07', '12345678907', 'Address7', NULL, '2022-07-01', NULL, 'Y', 'student7@example.com', 'Account7', 1),
-    (8, 'Student8', '2000-08-08', '12345678908', 'Address8', NULL, '2022-08-01', NULL, 'Y', 'student8@example.com', 'Account8', 8),
-    (9, 'Student9', '2000-09-09', '12345678909', 'Address9', NULL, '2022-09-01', NULL, 'Y', 'student9@example.com', 'Account9', 6),
-    (10, 'Student10', '2000-10-10', '12345678910', 'Address10', NULL, '2022-10-01', NULL, 'Y', 'student10@example.com', 'Account10', 9),
-    (11, 'Student11', '2000-11-11', '12345678911', 'Address11', NULL, '2022-11-01',  NULL, 'Y', 'student11@example.com', 'Account11', 4),
-    (12, 'Student12', '2000-12-12', '12345678912', 'Address12', NULL, '2022-12-01', NULL, 'Y', 'student12@example.com', 'Account12', 4),
-    (13, 'Student13', '2001-01-01', '12345678913', 'Address13', NULL, '2023-01-01', NULL, 'Y', 'student13@example.com', 'Account13', 9),
-    (14, 'Student14', '2001-02-02', '12345678914', 'Address14', NULL, '2023-02-01', NULL, 'Y', 'student14@example.com', 'Account14', 7),
-    (15, 'Student15', '2001-03-03', '12345678915', 'Address15', NULL, '2023-03-01', NULL, 'Y', 'student15@example.com', 'Account15', 1);
+    (1, 'Student1', '2000-01-01', '12345678901', 'Address1', NULL, '2022-01-01', NULL, 'Y', 'student1@example.com', 13),
+    (2, 'Student2', '2000-02-02', '12345678902', 'Address2', NULL, '2022-02-01', NULL, 'Y', 'student2@example.com', 7),
+    (3, 'Student3', '2000-03-03', '12345678903', 'Address3', NULL, '2022-03-01', NULL, 'Y', 'student3@example.com', 8),
+    (4, 'Student4', '2000-04-04', '12345678904', 'Address4', NULL, '2022-04-01', NULL, 'Y', 'student4@example.com', 7),
+    (5, 'Student5', '2000-05-05', '12345678905', 'Address5', NULL, '2022-05-01', NULL, 'N', 'student5@example.com', 13),
+    (6, 'Student6', '2000-06-06', '12345678906', 'Address6', NULL, '2022-06-01', NULL, 'N', 'student6@example.com', 1),
+    (7, 'Student7', '2000-07-07', '12345678907', 'Address7', NULL, '2022-07-01', NULL, 'Y', 'student7@example.com', 1),
+    (8, 'Student8', '2000-08-08', '12345678908', 'Address8', NULL, '2022-08-01', NULL, 'Y', 'student8@example.com', 8),
+    (9, 'Student9', '2000-09-09', '12345678909', 'Address9', NULL, '2022-09-01', NULL, 'Y', 'student9@example.com', 6),
+    (10, 'Student10', '2000-10-10', '12345678910', 'Address10', NULL, '2022-10-01', NULL, 'Y', 'student10@example.com', 9),
+    (11, 'Student11', '2000-11-11', '12345678911', 'Address11', NULL, '2022-11-01',  NULL, 'Y', 'student11@example.com', 4),
+    (12, 'Student12', '2000-12-12', '12345678912', 'Address12', NULL, '2022-12-01', NULL, 'Y', 'student12@example.com', 4),
+    (13, 'Student13', '2001-01-01', '12345678913', 'Address13', NULL, '2023-01-01', NULL, 'Y', 'student13@example.com', 9),
+    (14, 'Student14', '2001-02-02', '12345678914', 'Address14', NULL, '2023-02-01', NULL, 'Y', 'student14@example.com', 7),
+    (15, 'Student15', '2001-03-03', '12345678915', 'Address15', NULL, '2023-03-01', NULL, 'Y', 'student15@example.com', 1);
     
     INSERT INTO `room` (`room_id`, `room_capacity`) VALUES
     (1, 30),
