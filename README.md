@@ -1006,7 +1006,7 @@ SELECT
    AND a.status = 'Y'; -- 1->강사 / 2->직원
 ```
     
-![ezgif.com-video-to-gif-converter.gif](README%2090456e44faab4013bf4520930090a7ab/ezgif.com-video-to-gif-converter.gif)
+![fr-001_손세림.gif](README%2090456e44faab4013bf4520930090a7ab/fr-001_손세림.gif)
 
 </div>
 </details>
@@ -1029,7 +1029,7 @@ SELECT
    AND b.status = 'Y';
 ```
     
-![FR-002_양지혜.gif](README%2090456e44faab4013bf4520930090a7ab/FR-002_%25EC%2596%2591%25EC%25A7%2580%25ED%2598%259C.gif)
+![fr-002_손세림.gif](README%2090456e44faab4013bf4520930090a7ab/fr-002_손세림.gif)
 
 </div>
 </details>
@@ -1054,7 +1054,7 @@ SELECT
    AND b.com_info = '퇴근';
 ```
     
-![ezgif.com-video-to-gif-converter (6).gif](README%2090456e44faab4013bf4520930090a7ab/ezgif.com-video-to-gif-converter_(6).gif)
+![fr-003_손세림.gif](README%2090456e44faab4013bf4520930090a7ab/fr-003_손세림.gif)
     
 </div>
 </details>
@@ -1080,7 +1080,7 @@ SELECT
    AND a.status = 'Y';
 ```
     
-![FR-005_양지혜.gif](README%2090456e44faab4013bf4520930090a7ab/FR-005_%25EC%2596%2591%25EC%25A7%2580%25ED%2598%259C.gif)
+![FR-005_손세림.gif](README%2090456e44faab4013bf4520930090a7ab/fr-005_손세림.gif)
 
 </div>
 </details>
