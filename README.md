@@ -797,36 +797,14 @@
 <div markdown="1">  
         
 ```sql
--- FR-004. 아이디를 통해 직원 정보 모두 조회
--- 구성원정보 아이디를 통해 조예린 구성원이 직원이면 직원정보, 강사면 강사정보를 모두 출력할 수 있다.
-        
+-- FR-004. 식별자를 통해 강사 정보만 조회
 SELECT
-       a.inst_address
-     , a.inst_email
-     , a.inst_enroll_date
-     , a.inst_name
-     , a.inst_phone
-     , a.inst_pic
-     , a.inst_resign_date
-     , a.inst_salary
-     , a.inst_status
-  FROM mem_info a
- WHERE a.dept_id IS NULL
-   AND (a.emp_name = '조예린' OR a.inst_name = '조예린')
-UNION
-SELECT
-       a.emp_address
-     , a.emp_email
-     , a.emp_enroll_date
-     , a.emp_name
-     , a.emp_phone
-     , a.emp_pic
-     , a.emp_resign_date
-     , a.emp_salary
-     , a.emp_status
-  FROM mem_info a
- WHERE a.dept_id IS NOT NULL
-   AND (a.emp_name = '조예린' OR a.inst_name = '조예린');
+       name
+     , phone
+     , email
+  FROM mem_info
+ WHERE ide_key = '1'; -- 강사->1 / 직원->2
+
 ```
         
 ![ezgif.com-video-to-gif-converter (5).gif](README%2090456e44faab4013bf4520930090a7ab/ezgif.com-video-to-gif-converter_(5).gif)
@@ -839,24 +817,14 @@ SELECT
 <div markdown="1">
         
 ```sql
--- FR-006. 구성원 정보에서 강사 정보 추출
--- inst_name 혹은 inst_phone의 데이터 존재 유무를 통해
--- mem_info 테이블에서 강사의 정보만 조회 할 수 있다.
-        
+-- FR-006. 식별자를 통해 직원 정보만 조회  
 SELECT
-       id_no
-     , idcard_no
-     , inst_name
-     , inst_phone
-     , inst_address
-     , inst_pic
-     , inst_enroll_date
-     , inst_resign_date
-     , inst_status
-     , inst_email
-     , inst_salary
+      name
+    , phone
+    , email    
   FROM mem_info
- WHERE inst_name IS NOT NULL;
+ WHERE ide_key = '2'; -- 강사->1 / 직원->2
+
 ```
         
 ![fr06.gif](README%2090456e44faab4013bf4520930090a7ab/fr06.gif)
@@ -874,29 +842,25 @@ SELECT
         
 -- 현재 재직 중인 강사 조회하기
 SELECT
-       id_no
-     , idcard_no
-     , inst_name
-     , inst_phone
-     , inst_address
-     , inst_pic
-     , inst_status
-     , inst_salary
+      name
+    , phone
+    , email
+    , address
+    , status
   FROM mem_info
- WHERE inst_status = 'Y';
+ WHERE status = 'Y'
+ AND ide_key = '1';
         
 -- 퇴사한 강사 조회하기
 SELECT
-       id_no
-     , idcard_no
-     , inst_name
-     , inst_phone
-     , inst_address
-     , inst_pic
-     , inst_status
-     , inst_salary
+      name
+    , phone
+    , email
+    , address
+    , status
   FROM mem_info
- WHERE inst_status = 'N';
+ WHERE status = 'N'
+ AND ide_key = '1';
 ```
         
 ![fr07.gif](README%2090456e44faab4013bf4520930090a7ab/fr07.gif)
@@ -1031,15 +995,16 @@ UPDATE book
 <div markdown="1"> 
     
 ```sql
--- FR-001. 재직 중인 직원들의 직급 조회 
+-- FR-001. 재직 중인 직원들의 직급 조회
 -- 직급 테이블에서 재직중인 직원을 모두 조회할 수 있다.
     
 SELECT
-        a.emp_name AS '학생명'
+        a.emp_name AS '직원명'
       , b.job_name AS '직급명'
   FROM mem_info a
   JOIN job b ON (a.job_id = b.job_id)
- WHERE a.emp_status = 'Y';
+ WHERE a.emp_status = 'Y'
+ AND a.ide_key = '2'; -- 1->강사 / 2->직원
 ```
     
 ![ezgif.com-video-to-gif-converter.gif](README%2090456e44faab4013bf4520930090a7ab/ezgif.com-video-to-gif-converter.gif)
@@ -1061,7 +1026,8 @@ SELECT
        , b.emp_status
   FROM department a
   JOIN mem_info b ON (a.dept_id=b.dept_id)
- WHERE b.emp_status = 'Y';
+ WHERE b.emp_status = 'Y'
+ AND b.ide_key = '2'; -- 1->강사 / 2->직원
 ```
     
 ![FR-002_양지혜.gif](README%2090456e44faab4013bf4520930090a7ab/FR-002_%25EC%2596%2591%25EC%25A7%2580%25ED%2598%259C.gif)
@@ -1075,7 +1041,7 @@ SELECT
     
 ```sql
 -- FR-003. 직원의 출근 날짜, 시간 조회
--- 직원테이블 아이디를 통해 출퇴근 관리테이블로 접근하여
+-- 직원테이블을 통해 출퇴근 관리테이블로 접근하여
 -- '윤종길'의 출근 날짜와 시간을 조회할 수 있다.
     
 SELECT
