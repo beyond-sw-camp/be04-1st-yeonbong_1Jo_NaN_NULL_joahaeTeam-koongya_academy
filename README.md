@@ -225,7 +225,7 @@
     (
         `id_no`    MEDIUMINT NOT NULL AUTO_INCREMENT
      COMMENT '아이디',
-        `ide_key` CHAR(1) NOT NULL COMMENT '강사, 직원 구분자',
+        `ide_key` CHAR(1) NOT NULL COMMENT '강사(1), 직원(2) 구분자',
         `idcard_no`    SMALLINT COMMENT '출입증카드번호',
         `name`    VARCHAR(255) NOT NULL COMMENT '이름',
         `phone`    VARCHAR(255) NOT NULL COMMENT '연락처',
