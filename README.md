@@ -1621,11 +1621,42 @@ SELECT
  </div>
 </details>   
 
-
 <details>
 <summary>240108 회의록</summary>
 <div markdown="1">
-    
+
+## ✍ 스터디 내용
+
+- 구성원 정보 내 서브타입 수정.
+- 구분자를 통해 강사, 직원을 나누는 작업을 진행.
+- DDL, DML 문 수정, 나머지 README 파일 수정.
+- GitHub를 통한 협업 진행.
+
+## 📢 스터디 리뷰
+
+### 1. 스터디 장소 및 시간
+
+- 장소 : 동작구 캠퍼스 제 1강의실
+- 시간: 9:00 ~ 13:00 (4h 00m)
+
+### 2. 스터디 회고
+
+- 기존 구성원 정보(mem_info)는 똑같은 컬럼이지만, 이름만 다르게 구분했다. 하여 검색, 또는 데이터 입력 시 NULL값이 너무 많이 저장 되어 성능이 매우 떨어졌다. 성능을 향상 시키기 위해 구분자를 추가하여 같은 명의 컬럼을 하나로 추합하는 일을 진행 했다.
+- 먼저 논리모델링(Barker 표기법), 물리 모델링 구성원 정보를 수정하였다.
+- DML(지현근), DDL(신대영), CRUD Case(조예린), JOIN Case(손세림), 정의서 Gif 파일 수정(양지혜) 역할을 각각  나누어 [README.md](http://README.md) 파일을 수정 하였다. 각각 GitHub Branch를 생성하여 협업을 진행했다.
+- GitHub를 사용하여 각각 바꾼 파일을 Merge 등이 편리 하였고, issue milestone을 통한 각자 역할 및 관리가 매우 편하였다. 이전엔 잘 사용할 줄 몰랐던 부분들을 이번 협업 프로젝트를 통해 GitHub를 왜 사용하고, 어떻게 사용하는지 알 수 있는 좋은 기회였다.
+
+### 3. 스터디 사진
+
+![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled%2020.png)
+
+</div>
+</details>
+
+<details>
+<summary>240109 회의록</summary>
+<div markdown="1">
+
 ✍ 스터디 내용
     
 - 테스트케이스를 CRUD, JOIN, Transaction으로 구분해서 쿼리문 실행 및 영상 촬영
@@ -1663,7 +1694,7 @@ SELECT
 ![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled%2015.png)
 
 </div>
-</details>     
+</details>   
 
 ### <p id="6-2">6-2. 개선점</p>
 
