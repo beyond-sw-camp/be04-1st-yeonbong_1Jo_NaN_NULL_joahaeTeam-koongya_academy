@@ -1354,6 +1354,33 @@ SELECT
 </div>
 </details>   
 
+<details>
+<summary>TRIGGER</summary>
+<div markdown="1"> 
+
+student 에 학생 한명이 Insert되면 pay_history 에 결제 기록이 자동으로 Insert된다.
+
+```sql
+DELIMITER //
+
+CREATE TRIGGER pay_history_update_after_student_insert
+    AFTER INSERT
+    ON student
+    FOR EACH ROW
+BEGIN
+	 INSERT
+	   INTO pay_history (pay_date, stud_id)
+	 VALUES (NEW.stud_enroll_date, NEW.stud_id);
+END
+//
+DELIMITER ;
+```
+
+![trigger_proof.gif](README%2090456e44faab4013bf4520930090a7ab/trigger_proof.gif)
+
+</div>
+</details>
+
 </div>
 </details>  
 
