@@ -1688,7 +1688,7 @@ SELECT
 </div>
 </details>     
 
-### <p id="6-2">6-2. 개선 여지</p>
+### <p id="6-2">6-2. 개선점</p>
 
 ### 서브 타입의 물리모델 결정기준
 - Rollup, Rolldown, Identity
@@ -1712,6 +1712,8 @@ SELECT
     
     3) 데이터의 증가에 따라 RollUp 방식이 아닌 Identity 방식으로 테이블을 유지함으로써 데이터의 확장성을 향상시킨다.
     
+![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled%2019.png)
+
 
 ### <p id="6-3">6-3. 개인적 감상</p>
 
