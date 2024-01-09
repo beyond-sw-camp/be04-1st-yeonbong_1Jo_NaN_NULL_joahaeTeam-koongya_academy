@@ -225,25 +225,17 @@
     (
         `id_no`    MEDIUMINT NOT NULL AUTO_INCREMENT
      COMMENT '아이디',
+        `ide_key` CHAR(1) NOT NULL COMMENT '강사(1), 직원(2) 구분자',
         `idcard_no`    SMALLINT COMMENT '출입증카드번호',
-        `inst_name`    VARCHAR(255) COMMENT '강사이름',
-        `inst_phone`    VARCHAR(255) COMMENT '강사연락처',
-        `inst_address`    VARCHAR(255) COMMENT '강사주소',
-        `inst_pic`    MEDIUMBLOB COMMENT '강사사진',
-        `inst_enroll_date`    DATE COMMENT '강사등록일',
-        `inst_resign_date`    DATE COMMENT '강사퇴사일',
-        `inst_status`    CHAR(1) COMMENT '강사재직여부',
-        `inst_email`    VARCHAR(255) COMMENT '강사이메일',
-        `inst_salary`    INT COMMENT '강사급여정보',
-        `emp_name`    VARCHAR(255) COMMENT '직원이름',
-        `emp_phone`    CHAR(11) COMMENT '직원연락처',
-        `emp_address`    VARCHAR(255) COMMENT '직원주소',
-        `emp_email`    VARCHAR(255) COMMENT '직원이메일',
-        `emp_pic`    MEDIUMBLOB COMMENT '직원사진',
-        `emp_enroll_date`    DATE COMMENT '직원등록일',
-        `emp_resign_date`    DATE COMMENT '직원퇴사일',
-        `emp_status`    CHAR(1) COMMENT '직원재직여부',
-        `emp_salary`    INT COMMENT '직원급여정보',
+        `name`    VARCHAR(255) NOT NULL COMMENT '이름',
+        `phone`    VARCHAR(255) NOT NULL COMMENT '연락처',
+        `address`    VARCHAR(255) NOT NULL COMMENT '주소',
+        `pic`    MEDIUMBLOB COMMENT '사진',
+        `enroll_date`    DATE NOT NULL COMMENT '등록일',
+        `resign_date`    DATE COMMENT '퇴사일',
+        `status`    CHAR(1) NOT NULL COMMENT '재직여부',
+        `email`    VARCHAR(255) NOT NULL COMMENT '이메일',
+        `salary`    INT NOT NULL COMMENT '급여정보',
         `job_id`    SMALLINT COMMENT '직급번호',
         `dept_id`    SMALLINT COMMENT '부서번호',
      PRIMARY KEY ( `id_no` )
@@ -1656,7 +1648,7 @@ SELECT
 </div>
 </details>     
 
-### <p id="6-2">6-2. 개선 여지</p>
+### <p id="6-2">6-2. 개선점</p>
 
 ### 서브 타입의 물리모델 결정기준
 - Rollup, Rolldown, Identity
@@ -1680,6 +1672,8 @@ SELECT
     
     3) 데이터의 증가에 따라 RollUp 방식이 아닌 Identity 방식으로 테이블을 유지함으로써 데이터의 확장성을 향상시킨다.
     
+![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled%2019.png)
+
 
 ### <p id="6-3">6-3. 개인적 감상</p>
 
