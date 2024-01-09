@@ -985,12 +985,14 @@ UPDATE book
 -- 직급 테이블에서 재직중인 직원을 모두 조회할 수 있다.
     
 SELECT
-        a.emp_name AS '직원명'
-      , b.job_name AS '직급명'
+       a.ide_key AS '구성원 구분'
+     , a.name as '직원명'
+     , a.status as '재직여부'
+     , b.job_name as '직급명'
   FROM mem_info a
   JOIN job b ON (a.job_id = b.job_id)
- WHERE a.emp_status = 'Y'
- AND a.ide_key = '2'; -- 1->강사 / 2->직원
+ WHERE a.ide_key = '2'
+   AND a.status = 'Y'; -- 1->강사 / 2->직원
 ```
     
 ![ezgif.com-video-to-gif-converter.gif](README%2090456e44faab4013bf4520930090a7ab/ezgif.com-video-to-gif-converter.gif)
@@ -1007,13 +1009,13 @@ SELECT
 -- 재직중인 직원의 부서명을 모두 조회할 수 있다.
     
 SELECT
-         a.dept_name
-       , b.emp_name
-       , b.emp_status
+         a.dept_name as '부서명'
+       , b.name as '강사명'
+       , b.status as '재직여부'
   FROM department a
   JOIN mem_info b ON (a.dept_id=b.dept_id)
- WHERE b.emp_status = 'Y'
- AND b.ide_key = '2'; -- 1->강사 / 2->직원
+ WHERE b.ide_key = '2'
+   AND b.status = 'Y';
 ```
     
 ![FR-002_양지혜.gif](README%2090456e44faab4013bf4520930090a7ab/FR-002_%25EC%2596%2591%25EC%25A7%2580%25ED%2598%259C.gif)
@@ -1034,9 +1036,10 @@ SELECT
        b.com_time
      , b.com_date
      , b.com_info
+     , a.name
   FROM mem_info a
   JOIN commute b ON (a.id_no = b.id_no)
- WHERE a.emp_name = '윤종길'
+ WHERE a.name = '윤종길'
    AND b.com_info = '퇴근';
 ```
     
@@ -1054,15 +1057,16 @@ SELECT
 -- 재직 중인 직원의 급여, 직급, 부서를 조회할 수 있다.
     
 SELECT
-         a.emp_name
-       , a.emp_status
-       , a.emp_salary
+         a.name
+       , a.status
+       , a.salary
        , b.job_name
        , c.dept_name
   FROM mem_info a
   JOIN job b ON (a.job_id=b.job_id)
   JOIN department c ON (a.dept_id=c.dept_id)
- WHERE a.emp_status = 'Y';
+ WHERE a.ide_key = '2'
+   AND a.status = 'Y';
 ```
     
 ![FR-005_양지혜.gif](README%2090456e44faab4013bf4520930090a7ab/FR-005_%25EC%2596%2591%25EC%25A7%2580%25ED%2598%259C.gif)
