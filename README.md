@@ -1,5 +1,5 @@
 
-# ✏️ **Koongya Academy**
+# <p id="목차">✏️ **Koongya Academy**</p>
 <a href="#1">📄 1. 프로젝트 기획</a>
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-1">1-1. 개요</a>
@@ -39,6 +39,9 @@
 
 ## <p id="1">📄 1. 프로젝트 기획</p>
 
+
+<a href="#목차">목차로 돌아가기</a>
+
 ### <p id="1-1">1-1. 개요</p>
 
   글로벌 업무 역량 강화를 위해 공인어학성적 취득을 바라는 인원이 증가함에 따라 그에 맞는 학원 시스템 고도화의 필요성 또한 대두되고 있다. 기존의 어학학원 시스템에서 조금 더 효율적으로 발전시키고자 한다.
@@ -67,6 +70,8 @@
 
 ## <p id="2">📌 2. 개념&논리 모델링</p>
 
+<a href="#목차">목차로 돌아가기</a>
+
 - **개념모델링**
     
     ![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled%202.png)
@@ -83,6 +88,8 @@
 
 
 ## <p id="3">🔍 3. 물리 모델링</p>
+
+<a href="#목차">목차로 돌아가기</a>
 
 ![Untitled](README%2090456e44faab4013bf4520930090a7ab/Untitled%205.png)
 
@@ -732,6 +739,8 @@
 
 ## <p id="4">⚙️ 4. Replication Server 구축 현황</p>
 
+<a href="#목차">목차로 돌아가기</a>
+
 ### Ubuntu 20.04 / MariaDB 15.1
 
 > Master status
@@ -754,6 +763,8 @@
 ![notio_replication.gif](README%2090456e44faab4013bf4520930090a7ab/notio_replication.gif)
 
 ## <p id="5">🔖 5. 테스트케이스 정의서</p>
+
+<a href="#목차">목차로 돌아가기</a>
 
 [테스트케이스 정의서](https://docs.google.com/spreadsheets/d/1qcAa6c_0MqGflC10ehZl9Xgtp1THU9ZJ3mJ6bYfTiaI/edit#gid=0)
 
@@ -985,12 +996,14 @@ UPDATE book
 -- 직급 테이블에서 재직중인 직원을 모두 조회할 수 있다.
     
 SELECT
-        a.emp_name AS '직원명'
-      , b.job_name AS '직급명'
+       a.ide_key AS '구성원 구분'
+     , a.name as '직원명'
+     , a.status as '재직여부'
+     , b.job_name as '직급명'
   FROM mem_info a
   JOIN job b ON (a.job_id = b.job_id)
- WHERE a.emp_status = 'Y'
- AND a.ide_key = '2'; -- 1->강사 / 2->직원
+ WHERE a.ide_key = '2'
+   AND a.status = 'Y'; -- 1->강사 / 2->직원
 ```
     
 ![ezgif.com-video-to-gif-converter.gif](README%2090456e44faab4013bf4520930090a7ab/ezgif.com-video-to-gif-converter.gif)
@@ -1007,13 +1020,13 @@ SELECT
 -- 재직중인 직원의 부서명을 모두 조회할 수 있다.
     
 SELECT
-         a.dept_name
-       , b.emp_name
-       , b.emp_status
+         a.dept_name as '부서명'
+       , b.name as '강사명'
+       , b.status as '재직여부'
   FROM department a
   JOIN mem_info b ON (a.dept_id=b.dept_id)
- WHERE b.emp_status = 'Y'
- AND b.ide_key = '2'; -- 1->강사 / 2->직원
+ WHERE b.ide_key = '2'
+   AND b.status = 'Y';
 ```
     
 ![FR-002_양지혜.gif](README%2090456e44faab4013bf4520930090a7ab/FR-002_%25EC%2596%2591%25EC%25A7%2580%25ED%2598%259C.gif)
@@ -1034,9 +1047,10 @@ SELECT
        b.com_time
      , b.com_date
      , b.com_info
+     , a.name
   FROM mem_info a
   JOIN commute b ON (a.id_no = b.id_no)
- WHERE a.emp_name = '윤종길'
+ WHERE a.name = '윤종길'
    AND b.com_info = '퇴근';
 ```
     
@@ -1054,15 +1068,16 @@ SELECT
 -- 재직 중인 직원의 급여, 직급, 부서를 조회할 수 있다.
     
 SELECT
-         a.emp_name
-       , a.emp_status
-       , a.emp_salary
+         a.name
+       , a.status
+       , a.salary
        , b.job_name
        , c.dept_name
   FROM mem_info a
   JOIN job b ON (a.job_id=b.job_id)
   JOIN department c ON (a.dept_id=c.dept_id)
- WHERE a.emp_status = 'Y';
+ WHERE a.ide_key = '2'
+   AND a.status = 'Y';
 ```
     
 ![FR-005_양지혜.gif](README%2090456e44faab4013bf4520930090a7ab/FR-005_%25EC%2596%2591%25EC%25A7%2580%25ED%2598%259C.gif)
@@ -1343,6 +1358,8 @@ SELECT
 </details>  
 
 ## <p id="6">📗 6. 회고록</p>
+
+<a href="#목차">목차로 돌아가기</a>
 
 ### <p id="6-1">6-1. 회의록</p>
 
@@ -1677,7 +1694,7 @@ SELECT
 
 ### <p id="6-3">6-3. 개인적 감상</p>
 
-| 조원명| 회고록 |
+| 조원명 | 회고록 |
 | --- | --- |
 | 소우주 | 재수학원에서 일했던 경험을 살려 조금 더 디테일한 부분에 초점을 맞출 수 있었습니다. 많은 시간 동안 팀원들과 소통하면서 DB 모델링에 대한 이해가 깊어질 수 있었고, 더욱 좋은 성능을 내는 서브타입 모델링이 무엇일지 상황에 맞게 고민하며 진행하는 것의 중요성을 느꼈습니다. |
 | 손세림 | 이번 프로젝트를 통해 데이터 모델링을 처음 접하게되어 서비스의 구상부터 사용자 요구사항을 명세화하고 ERD 모델링하여 서버에 배포하기까지 구체적 경험을 할 수 있었습니다. 첫 프로젝트인 만큼 모델링에 대한 이해가 부족하여 아쉬운 부분도 있었지만 팀원들과 여러 의견을 나누고 협업하며 개인으로서 부족했던 부분도 함께 채워나갈 수 있는 값진 시간이였습니다. |
