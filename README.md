@@ -401,7 +401,7 @@
 <div markdown="1">   
     
 ```sql
-    INSERT INTO `level` (`level_id`, `level_reference_score`)
+      INSERT INTO `level` (`level_id`, `level_reference_score`)
     VALUES
     (1, 100),
     (2, 200),
@@ -561,43 +561,36 @@
     (15, '2023-03-01 14:50:00', 3);
     
     INSERT INTO `mem_info` (
+    	  `id_no`,
         `idcard_no`,
-        `inst_name`,
-        `inst_phone`,
-        `inst_address`,
-        `inst_pic`,
-        `inst_enroll_date`,
-        `inst_resign_date`,
-        `inst_status`,
-        `inst_email`,
-        `inst_salary`,
-        `emp_name`,
-        `emp_phone`,
-        `emp_address`,
-        `emp_email`,
-        `emp_pic`,
-        `emp_enroll_date`,
-        `emp_resign_date`,
-        `emp_status`,
-        `emp_salary`,
+        `ide_key`,
+        `name`,
+        `phone`,
+        `address`,
+        `pic`,
+        `enroll_date`,
+        `resign_date`,
+        `status`,
+        `email`,
+        `salary`,
         `job_id`,
         `dept_id`
     )  VALUES
-    (1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '원다혜', '01098765432', '서울시 강서구', 'emp1@example.com', NULL, '2023-02-01', '2023-04-30', 'N', 45000, 1, 3),
-    (2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '황지영', '01033334444', '서울시 강동구', 'emp2@example.com', NULL, '2023-03-01', NULL, 'Y', 55000, 3, 5),
-    (3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '서지영', '01077778888', '서울시 강서구', 'emp3@example.com', NULL, '2023-04-01', '2023-06-30', 'Y', 60000, 4, 4),
-    (4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '윤종길', '01012123434', '서울시 강동구', 'emp4@example.com', NULL, '2023-05-01', NULL, 'N', 70000, 11, 10),
-    (5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '김종국', '01056567878', '서울시 강서구', 'emp5@example.com', NULL, '2023-06-01', '2023-08-31', 'N', 80000, 2, 15),
-    (6, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '손재구', '01034345656', '서울시 강동구', 'emp6@example.com', NULL, '2023-07-01', NULL, 'Y', 90000, 6, 9),
-    (7, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '전지성', '01012123434', '서울시 강서구', 'emp7@example.com', NULL, '2023-08-01', '2023-10-31', 'N', 100000, 9, 13),
-    (8, '서동우', '01045456767', '서울시 강북구', NULL, '2023-08-01', NULL, 'N', 'inst8@example.com', 120000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-    (9, '송지영', '01012123434', '서울시 강남구', NULL, '2023-09-01', '2023-11-15', 'Y', 'inst9@example.com', 130000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-    (10, '강도현', '01034345656', '서울시 강북구', NULL, '2023-10-01', NULL, 'N', 'inst10@example.com', 140000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-    (11, '유수진', '01056567878', '서울시 강남구', NULL, '2023-11-01', '2023-01-15', 'Y', 'inst11@example.com', 150000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-    (12, '김태호', '01023234545', '서울시 강북구', NULL, '2023-12-01', NULL, 'Y', 'inst12@example.com', 160000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-    (13, '백가영', '01090901212', '서울시 강남구', NULL, '2024-01-01', '2024-03-15', 'Y', 'inst13@example.com', 170000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-    (14, '장승우', '01078789090', '서울시 강북구', NULL, '2024-02-01', NULL, 'N', 'inst14@example.com', 180000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-    (15, '조예린', '01045456767', '서울시 강남구', NULL, '2024-03-01', '2024-05-15', 'N', 'inst15@example.com', 190000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+    (NULL, 1, '2', '원다혜', '01098765432', '서울시 강서구', NULL, '2023-02-01', '2023-04-30', 'N', 'emp1@example.com', 45000, 1, 3),
+    (NULL, 2, '2', '황지영', '01033334444', '서울시 강동구', NULL, '2023-03-01', NULL, 'Y', 'emp2@example.com', 55000, 3, 5),
+    (NULL, 3, '2', '서지영', '01077778888', '서울시 강서구', NULL, '2023-04-01', '2023-06-30', 'N', 'emp3@example.com', 60000, 4, 4),
+    (NULL, 4, '2', '윤종길', '01012123434', '서울시 강동구', NULL,  '2023-05-01', NULL, 'Y','emp4@example.com', 70000, 11, 10),
+    (NULL, 5, '2', '김종국', '01056567878', '서울시 강서구', NULL, '2023-06-01', '2023-08-30', 'N', 'emp5@example.com', 80000, 2, 15),
+    (NULL, 6, '2', '손재구', '01034345656', '서울시 강동구', NULL, '2023-07-01', NULL, 'Y', 'emp6@example.com', 90000, 6, 9),
+    (NULL, 7, '2', '전지성', '01012123434', '서울시 강서구', NULL, '2023-08-01', NULL, 'Y', 'emp7@example.com', 100000, 9, 13),
+    (NULL, 8, '1', '서동우', '01045456767', '서울시 강북구', NULL, '2023-08-01', NULL, 'Y', 'inst8@example.com', 120000, NULL, NULL),
+    (NULL, 9, '1', '송지영', '01012123434', '서울시 강남구', NULL, '2023-09-01', '2023-11-15', 'N', 'inst9@example.com', 130000, NULL, NULL),
+    (NULL, 10, '1', '강도현', '01034345656', '서울시 강북구', NULL, '2023-10-01', NULL, 'Y', 'inst10@example.com', 140000, NULL, NULL),
+    (NULL, 11, '1', '유수진', '01056567878', '서울시 강남구', NULL, '2023-11-01', '2023-01-15', 'N', 'inst11@example.com', 150000, NULL, NULL),
+    (NULL, 12, '1', '김태호', '01023234545', '서울시 강북구', NULL, '2023-12-01', NULL, 'Y', 'inst12@example.com', 160000, NULL, NULL),
+    (NULL, 13, '1', '백가영', '01090901212', '서울시 강남구', NULL, '2024-01-01', NULL, 'Y', 'inst13@example.com', 170000, NULL, NULL),
+    (NULL, 14, '1', '장승우', '01078789090', '서울시 강북구', NULL, '2024-02-01', NULL, 'Y', 'inst14@example.com', 180000, NULL, NULL),
+    (NULL, 15, '1', '조예린', '01045456767', '서울시 강남구', NULL, '2024-03-01', '2024-05-15', 'N', 'inst15@example.com', 190000, NULL, NULL);
     
     INSERT INTO `lecture` (`lec_id`, `lec_name`, `lec_fee`, `lec_capa`, `bk_id`, `room_id`, `id_no`, `level_id`)
     VALUES(1, 'LC만점반', 400000, 30, 13, 3, 14, 15),
@@ -616,7 +609,7 @@
     (14, 'LC기초반', 150000, 30, 14, 13, 14, 1),
     (15, 'RC기초반', 150000, 30, 15, 6, 15, 2);
     
-    --attendance
+    -- attendance
     INSERT INTO `attendance` (`date_id`, `att_att_time`, `att_late_state`, `att_late_time`, `att_leave_state`, `att_leave_time`, `att_go_state`, `att_go_time`, `att_back_time`, `att_absent_state`, `lec_id`, `stud_id`)  
     VALUES
     ('2023-01-01', '09:00:00', 'N', '00:00:00', 'N', '00:04:00', 'N', '00:00:00', '00:00:00', 'N', 3, 1),
@@ -739,6 +732,7 @@
     (65, 11, 9),
     (97, 13, 11),
     (63, 5, 13);
+    
 ```
 </div>
 </details>
