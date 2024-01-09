@@ -230,7 +230,7 @@
         `name`    VARCHAR(255) NOT NULL COMMENT '이름',
         `phone`    VARCHAR(255) NOT NULL COMMENT '연락처',
         `address`    VARCHAR(255) NOT NULL COMMENT '주소',
-        `pic`    MEDIUMBLOB NOT NULL COMMENT '사진',
+        `pic`    MEDIUMBLOB COMMENT '사진',
         `enroll_date`    DATE NOT NULL COMMENT '등록일',
         `resign_date`    DATE COMMENT '퇴사일',
         `status`    CHAR(1) NOT NULL COMMENT '재직여부',
