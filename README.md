@@ -34,7 +34,7 @@
 
 
 ---
-👥 [소우주](https://github.com/helloItsUniverse), [손세림](https://github.com/bucky1005), [신대영](https://github.com/DYShin1), 양지혜, [조예린](https://github.com/orlzlL), [지현근](https://github.com/jihyeongeun)
+👥 [소우주](https://github.com/helloItsUniverse), [손세림](https://github.com/bucky1005), [신대영](https://github.com/DYShin1), [양지혜](https://github.com/Jihye1101), [조예린](https://github.com/orlzlL), [지현근](https://github.com/jihyeongeun)
 ---
 
 ## <p id="1">📄 1. 프로젝트 기획</p>
