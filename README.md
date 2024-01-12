@@ -34,7 +34,7 @@
 
 
 ---
-👥 소우주, [손세림](https://github.com/bucky1005), 신대영, 양지혜, [조예린](https://github.com/orlzlL), 지현근
+👥 소우주, [손세림](https://github.com/bucky1005), [신대영](https://github.com/DYShin1), 양지혜, [조예린](https://github.com/orlzlL), 지현근
 ---
 
 ## <p id="1">📄 1. 프로젝트 기획</p>
